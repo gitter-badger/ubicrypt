@@ -1,0 +1,115 @@
+.await {
+    -fx-cursor: wait;
+}
+
+.bread-crumb-bar {
+    -fx-background-image: url("images/home.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.bc-home {
+    -fx-image: url("images/home.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-providers {
+    -fx-image: url("images/upload-cloud.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-provider-file {
+    -fx-image: url("images/archive-folder.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-provider-file-error {
+    -fx-image: url("images/burning-folder.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-provider-ftp {
+    -fx-image: url("images/ftp.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-provider-ftp-error {
+    -fx-image: url("images/burning-folder.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-folder {
+    -fx-image: url("images/folder.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-open-folder {
+    -fx-image: url("images/open-folder.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-file-saving {
+    -fx-image: url("images/send-file.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-file {
+    -fx-image: url("images/file.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-file-saved-true {
+    -fx-image: url("images/check-file.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-file-saved-false {
+    -fx-image: url("images/cancel-file.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.tree-file-saved-error {
+    -fx-image: url("images/delete-file.png");
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+}
+
+.defaultButton {
+    -fx-background-color: #000000,
+    linear-gradient(#7ebcea, #2f4b8f),
+    linear-gradient(#426ab7, #263e75),
+    linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 5, 5, 4;
+    -fx-padding: 7 30 7 30;
+    -fx-text-fill: #242d35;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+
+.error {
+    -fx-text-fill: red;
+}
+
+.title {
+    -fx-font-size: 11pt;
+}
+
+.titleProgress {
+    -fx-font-style: italic;
+    /*-fx-font-scale: 110%;*/
+    /*-fx-font-weight: bold;*/
+}

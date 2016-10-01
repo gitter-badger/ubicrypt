@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+      <StackPane layoutX="139.0" layoutY="26.0" prefHeight="150.0" prefWidth="200.0">
+         <children>
+      		<TreeView fx:id="config" prefHeight="175.0" prefWidth="310.0" />
+         </children>
+      </StackPane>
+		<Label fx:id="name" text="Label" />
+		<Button fx:id="remove" layoutX="453.0" layoutY="75.0" mnemonicParsing="false" text="Remove" />
+      <Label layoutX="145.0" layoutY="2.0" text="Configuration" />
+	</children>
+</fx:root>

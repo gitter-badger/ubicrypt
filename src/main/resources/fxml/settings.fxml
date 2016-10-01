@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ubicrypt.ui.ctrl.SettingsController">
+    <top>
+        <VBox fx:id="topbox" spacing="10.0">
+            <children>
+                <Label text="%title.settings" textAlignment="CENTER">
+                    <font>
+                        <Font size="17.0"/>
+                    </font>
+                </Label>
+                <fx:include source="header-bc.fxml"/>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </top>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+    <center>
+        <Accordion BorderPane.alignment="TOP_CENTER">
+            <panes>
+                <TitledPane alignment="TOP_LEFT" animated="false" contentDisplay="TOP" text="Export">
+                    <content>
+                        <GridPane alignment="TOP_CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES"
+                                                   prefWidth="350"/>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="70.0"/>
+                            </columnConstraints>
+                            <children>
+                                <Label text="Your Public Key in clipboard" GridPane.columnSpan="2"/>
+                                <Button fx:id="copyPKClipboard" mnemonicParsing="false" text="Copy"
+                                        GridPane.columnIndex="1"/>
+                                <Label text="Export Configuration" GridPane.rowIndex="1"/>
+                                <Button fx:id="exportConfig" mnemonicParsing="false" text="Export"
+                                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+                <TitledPane alignment="TOP_LEFT" animated="false" contentDisplay="TOP" text="Import">
+                    <content>
+                        <GridPane alignment="TOP_CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES"
+                                                   prefWidth="350"/>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="70.0"/>
+                            </columnConstraints>
+                            <children>
+                                <Label text="Add new device Public Key"/>
+                                <Button fx:id="addNewPK" mnemonicParsing="false" text="Add"
+                                        GridPane.columnIndex="1"/>
+                                <Label text="Import Configuration" GridPane.rowIndex="1"/>
+                                <Button fx:id="importConfig" mnemonicParsing="false" text="Import"
+                                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+            </panes>
+        </Accordion>
+    </center>
+</BorderPane>

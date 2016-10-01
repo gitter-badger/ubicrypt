@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="createKeyPane" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ubicrypt.ui.ctrl.CreateKeyController">
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <Label text="Setup Password"/>
+                <PasswordField fx:id="pwd" promptText="Set Password"/>
+                <PasswordField fx:id="pwd2" promptText="Repeat Password"/>
+                <Label fx:id="errorLabel" text="Passwords don't match" textFill="#e42611" visible="false"/>
+                <Button fx:id="submit" mnemonicParsing="false" text="Create New Key"/>
+            </children>
+        </VBox>
+    </center>
+    <padding>
+        <Insets left="50.0" right="50.0"/>
+    </padding>
+</BorderPane>

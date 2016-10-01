@@ -1,0 +1,15 @@
+# Gradle
+.gradle
+build
+gradle/
+
+# IDEA
+.idea
+*.iml
+*.ipr
+*iws
+out
+
+# Vim
+*.sw[op]
+nohup*
