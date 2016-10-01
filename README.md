@@ -2,9 +2,9 @@
 
 ## Keep your digital life in your control. Privately and easily
 
-Cloud storage is pervasive and cheap, but it raises concerns on privacy, security, resiliantness and portability.
+_Cloud storage is pervasive and cheap, but it raises concerns on privacy, security, resiliantness and portability._
 
-*UbiCrypt* allows you to keep your data secrect and safely stored in multiple locations.
+*UbiCrypt* is a desktop application that allows you to keep your data secret and safely stored in multiple locations.
 
 ### Ubicrypt encrypts your files and keeps them to any cloud storage
 #### Key features:
@@ -22,4 +22,17 @@ Cloud storage is pervasive and cheap, but it raises concerns on privacy, securit
 
 #### Run UbiCrypt 
 
+Prerequisites:
+
+  - Java JDK 8
+  - If OpenJDK installed, javafx should be [installed separately](http://chriswhocodes.com/).
+
 `./gradlew run`
+
+#### License
+
+Copyright Giancarlo Frison.
+
+Licensed under the [UbiCrypt License](LICENSE.md); you may not use this file except in compliance with the License. 
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
