@@ -56,6 +56,7 @@ import rx.Observable;
 import rx.subjects.PublishSubject;
 import ubicrypt.core.FileFacade;
 import ubicrypt.core.ProgressFile;
+import ubicrypt.core.Utils;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.dto.LocalFile;
 import ubicrypt.core.dto.UbiFile;
@@ -164,6 +165,7 @@ public class HomeController implements Initializable, ApplicationContextAware {
     private GeneralProgress gProgress;
     private final Consumer<Path> fileAdder = fromFolder -> {
         FileChooser fc = new FileChooser();
+        log.debug("add files from:{}", basePath.resolve(fromFolder));
         fc.setInitialDirectory(basePath.resolve(fromFolder).toFile());
         Optional.ofNullable(fc.showOpenMultipleDialog(stage)).ifPresent(files -> Observable.merge(files.stream().map(file -> {
             log.debug("adding file:{}", file);
@@ -212,7 +214,7 @@ public class HomeController implements Initializable, ApplicationContextAware {
         root.getChildren().add(filesRoot);
         treeView.setShowRoot(false);
         localConfig.getLocalFiles().stream()
-                .filter(file -> !file.isGhost() && !file.isRemoved() && !file.isDeleted())
+                .filter(Utils.ignoredFiles)
                 .forEach(localFile -> addFiles(localFile.getPath().iterator(), basePath, filesRoot, localFile));
 
 
@@ -366,7 +368,7 @@ public class HomeController implements Initializable, ApplicationContextAware {
         if (optTreeItem.isPresent()) {
             return addFiles(it, resolvedPath, optTreeItem.get(), file);
         }
-        final TreeItem<ITreeItem> fileItem = new TreeFolderItem(new FolderItem(path, fileAdder));
+        final TreeItem<ITreeItem> fileItem = new TreeFolderItem(new FolderItem(path, event->fileAdder.accept(resolvedPath)));
         root.getChildren().add(fileItem);
         return addFiles(it, resolvedPath, fileItem, file);
     }

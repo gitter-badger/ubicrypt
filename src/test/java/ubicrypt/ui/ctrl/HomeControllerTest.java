@@ -37,7 +37,7 @@ public class HomeControllerTest {
         PlatformImpl.startup(() -> {
         });
         final TreeItem<ITreeItem> filesRoot = new TreeItem<>();
-        final TreeItem<ITreeItem> dirA = new TreeItem<>(new FolderItem(Paths.get("dirA")));
+        final TreeItem<ITreeItem> dirA = new TreeItem<>(new FolderItem(Paths.get("dirA"), null));
         filesRoot.getChildren().add(dirA);
         final LocalFile fileA = new LocalFile() {{
             setPath(Paths.get("dirA/fileA"));

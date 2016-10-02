@@ -20,6 +20,7 @@ import java.nio.file.Path;
 import java.util.Optional;
 import java.util.function.Consumer;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
@@ -45,12 +46,12 @@ public class FolderItem implements ITreeItem {
         label = null;
     }
 
-    public FolderItem(final Path path, final Consumer<Path> fileAdder) {
+    public FolderItem(final Path path, final EventHandler<ActionEvent> onAddHandler) {
         checkArgument(path != null, "path must not be null");
         this.path = path;
         label = null;
         final MenuItem add = new MenuItem("Add File");
-        add.setOnAction(event -> fileAdder.accept(path));
+        add.setOnAction(onAddHandler);
         menu.getItems().add(add);
 
     }
