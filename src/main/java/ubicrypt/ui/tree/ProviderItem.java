@@ -13,6 +13,9 @@
  */
 package ubicrypt.ui.tree;
 
+import java.util.Optional;
+import java.util.function.Consumer;
+
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -22,9 +25,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import ubicrypt.core.provider.UbiProvider;
-
-import java.util.Optional;
-import java.util.function.Consumer;
 
 public class ProviderItem implements ITreeItem {
     private final UbiProvider provider;

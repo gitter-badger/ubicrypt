@@ -13,11 +13,11 @@
  */
 package ubicrypt.core.util;
 
-import rx.functions.Action1;
-
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+
+import rx.functions.Action1;
 
 public class ClassMatcher<T> implements Function<Object, T>, Action1<T> {
 

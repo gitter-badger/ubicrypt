@@ -15,6 +15,7 @@ package ubicrypt.core.util;
 
 import org.apache.log4j.WriterAppender;
 import org.apache.log4j.spi.LoggingEvent;
+
 import rx.internal.operators.BufferUntilSubscriber;
 import rx.subjects.Subject;
 

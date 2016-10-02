@@ -13,19 +13,20 @@
  */
 package ubicrypt;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Lazy;
-import ubicrypt.core.FixPassPhraseInitializer;
-import ubicrypt.core.UbiConf;
-import ubicrypt.core.Utils;
 
 import java.io.File;
 import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+import ubicrypt.core.FixPassPhraseInitializer;
+import ubicrypt.core.UbiConf;
+import ubicrypt.core.Utils;
 
 import static ubicrypt.core.Utils.securityFile;
 import static ubicrypt.core.Utils.ubiqFolder;

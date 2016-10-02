@@ -13,9 +13,9 @@
  */
 package ubicrypt.core;
 
-import rx.Observable;
-
 import java.util.function.Function;
+
+import rx.Observable;
 
 public interface RemoteIO<T> extends Observable.OnSubscribe<T>, Function<T, Observable<Boolean>> {
 }

@@ -13,9 +13,9 @@
  */
 package ubicrypt.core.dto;
 
-import ubicrypt.core.crypto.AESGCM;
-
 import java.util.Optional;
+
+import ubicrypt.core.crypto.AESGCM;
 
 public class RemoteFile extends UbiFile<RemoteFile> {
     private Key key = new Key(AESGCM.rndKey());

@@ -14,6 +14,13 @@
 package ubicrypt.core.watch;
 
 import org.slf4j.Logger;
+
+import java.nio.file.Path;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import reactor.fn.tuple.Tuple2;
 import rx.Observable;
 import rx.subjects.PublishSubject;
@@ -21,11 +28,6 @@ import rx.subjects.Subject;
 import ubicrypt.core.IFileCommander;
 import ubicrypt.core.exp.AlreadyManagedException;
 import ubicrypt.core.provider.FileEvent;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.nio.file.Path;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

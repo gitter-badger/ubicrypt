@@ -14,6 +14,7 @@
 package ubicrypt.core.watch;
 
 import com.google.common.base.Throwables;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -25,6 +26,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashSet;
+
+import javax.inject.Inject;
+
 import reactor.fn.tuple.Tuple;
 import rx.Observable;
 import rx.subjects.PublishSubject;
@@ -38,17 +48,13 @@ import ubicrypt.core.dto.LocalFile;
 import ubicrypt.core.provider.LocalRepository;
 import ubicrypt.core.provider.RemoteCtxConf;
 
-import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.HashSet;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
+import static org.mockito.Mockito.when;
 import static org.slf4j.LoggerFactory.getLogger;
 import static ubicrypt.core.TestUtils.tmp;
 

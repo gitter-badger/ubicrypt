@@ -14,7 +14,7 @@
 package ubicrypt.core;
 
 import com.google.common.collect.ImmutableList;
-import javafx.scene.image.ImageView;
+
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.slf4j.Logger;
@@ -26,6 +26,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Scope;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
+import javafx.scene.image.ImageView;
 import rx.Observable;
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
@@ -42,12 +51,6 @@ import ubicrypt.core.util.FileInSync;
 import ubicrypt.core.util.StreamAppender;
 import ubicrypt.core.watch.WatchConf;
 import ubicrypt.ui.tree.FileItem;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 
 @Configuration
 @Import({WatchConf.class, BaseConf.class, RemoteCtxConf.class})

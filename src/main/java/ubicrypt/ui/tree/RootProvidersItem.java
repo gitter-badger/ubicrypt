@@ -13,6 +13,8 @@
  */
 package ubicrypt.ui.tree;
 
+import java.util.Optional;
+
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
@@ -20,8 +22,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import ubicrypt.ui.Anchor;
-
-import java.util.Optional;
 
 public class RootProvidersItem implements ITreeItem {
     private final ContextMenu menu;

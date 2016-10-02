@@ -14,6 +14,7 @@
 package ubicrypt.core.provider;
 
 import com.google.common.collect.Sets;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.bouncycastle.openpgp.PGPPublicKey;
@@ -30,6 +31,17 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import ubicrypt.core.FileCommander;
 import ubicrypt.core.TestUtils;
 import ubicrypt.core.Utils;
@@ -42,15 +54,6 @@ import ubicrypt.core.provider.file.FileConf;
 import ubicrypt.core.provider.file.FileProvider;
 import ubicrypt.core.util.EqualsValue;
 import ubicrypt.core.util.ObjectSerializer;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static ubicrypt.core.TestUtils.fileProvider;

@@ -20,7 +20,7 @@ If you want to contribute to the repository, here's a quick guide:
   
   Example git comment:
   ````
-      (Issue-ID) Make the example in CONTRIBUTING imperative and concrete
+      [Issue-ID] Make the example in CONTRIBUTING imperative and concrete
   
       Without this patch applied the example commit message in the CONTRIBUTING
       document is not a concrete example.  This is a problem because the

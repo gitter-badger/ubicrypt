@@ -13,6 +13,11 @@
  */
 package ubicrypt.core.provider;
 
+import java.io.InputStream;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
+
 import rx.Observable;
 import rx.functions.Action0;
 import rx.functions.Actions;
@@ -22,11 +27,6 @@ import ubicrypt.core.dto.RemoteConfig;
 import ubicrypt.core.dto.RemoteFile;
 import ubicrypt.core.dto.UbiFile;
 import ubicrypt.core.provider.lock.AcquirerReleaser;
-
-import java.io.InputStream;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.BiFunction;
-import java.util.function.Predicate;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static rx.Observable.create;

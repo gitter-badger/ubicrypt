@@ -13,19 +13,21 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import org.springframework.beans.factory.annotation.Qualifier;
 import rx.Observable;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static ubicrypt.ui.Anchor.anchor;
 

@@ -14,7 +14,6 @@
 package ubicrypt.core;
 
 import org.junit.Test;
-import ubicrypt.core.dto.LocalFile;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,6 +21,8 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.time.Instant;
 import java.util.UUID;
+
+import ubicrypt.core.dto.LocalFile;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

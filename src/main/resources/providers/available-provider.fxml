@@ -4,10 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0"
-		 prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-	<children>
-		<Label fx:id="nameProvider" layoutX="50.0" layoutY="66.0" prefHeight="15.0" prefWidth="163.0" text="Label" />
-		<Button fx:id="configureButton" layoutX="434.0" layoutY="61.0" mnemonicParsing="false" text="Configure" />
-	</children>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+         minWidth="-Infinity"
+         prefHeight="175.0" prefWidth="600.0" type="AnchorPane"
+         xmlns="http://javafx.com/javafx/8">
+    <children>
+        <Label fx:id="nameProvider" layoutX="50.0" layoutY="66.0" prefHeight="15.0"
+               prefWidth="163.0" text="Label"/>
+        <Button fx:id="configureButton" layoutX="434.0" layoutY="61.0" mnemonicParsing="false"
+                text="Configure"/>
+    </children>
 </fx:root>

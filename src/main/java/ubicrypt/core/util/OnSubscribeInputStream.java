@@ -13,12 +13,12 @@
  */
 package ubicrypt.core.util;
 
-import rx.Observable;
-import rx.Subscriber;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+
+import rx.Observable;
+import rx.Subscriber;
 
 public class OnSubscribeInputStream implements Observable.OnSubscribe<byte[]> {
     private final InputStream is;

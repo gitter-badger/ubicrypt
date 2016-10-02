@@ -14,11 +14,12 @@
 package ubicrypt.core.util;
 
 import org.slf4j.Logger;
-import rx.Observable;
-import rx.functions.Func1;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+
+import rx.Observable;
+import rx.functions.Func1;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

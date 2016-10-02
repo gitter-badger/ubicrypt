@@ -14,6 +14,26 @@
 package ubicrypt.ui;
 
 import com.google.common.base.Throwables;
+
+import org.slf4j.Logger;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.ResourceBundle;
+import java.util.Set;
+import java.util.Stack;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +41,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TreeItem;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
-import org.slf4j.Logger;
 import rx.Observable;
 import rx.internal.operators.BufferUntilSubscriber;
 import rx.subjects.PublishSubject;
@@ -30,16 +49,6 @@ import ubicrypt.core.dto.UbiFile;
 import ubicrypt.ui.tree.FileItem;
 import ubicrypt.ui.tree.FolderItem;
 import ubicrypt.ui.tree.ITreeItem;
-
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

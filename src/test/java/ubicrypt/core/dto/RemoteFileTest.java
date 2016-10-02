@@ -14,10 +14,11 @@
 package ubicrypt.core.dto;
 
 import org.junit.Test;
-import ubicrypt.core.Utils;
 
 import java.nio.file.Paths;
 import java.util.Random;
+
+import ubicrypt.core.Utils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

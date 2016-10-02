@@ -16,6 +16,7 @@ package ubicrypt.core;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import ubicrypt.core.dto.UbiFile;
 import ubicrypt.core.provider.IRepository;
 

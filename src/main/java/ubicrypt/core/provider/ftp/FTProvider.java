@@ -19,11 +19,6 @@ import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
 import org.slf4j.Logger;
-import rx.Observable;
-import rx.schedulers.Schedulers;
-import ubicrypt.core.exp.NotFoundException;
-import ubicrypt.core.provider.ProviderStatus;
-import ubicrypt.core.provider.UbiProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +27,15 @@ import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import static org.apache.commons.lang3.StringUtils.*;
+import rx.Observable;
+import rx.schedulers.Schedulers;
+import ubicrypt.core.exp.NotFoundException;
+import ubicrypt.core.provider.ProviderStatus;
+import ubicrypt.core.provider.UbiProvider;
+
+import static org.apache.commons.lang3.StringUtils.defaultString;
+import static org.apache.commons.lang3.StringUtils.isEmpty;
+import static org.apache.commons.lang3.StringUtils.startsWith;
 import static org.slf4j.LoggerFactory.getLogger;
 
 public class FTProvider extends UbiProvider {
@@ -40,6 +43,14 @@ public class FTProvider extends UbiProvider {
 
 
     protected FTPConf conf;
+
+    private static String showServerReply(FTPClient ftpClient) {
+        final String[] replyStrings = ftpClient.getReplyStrings();
+        if (replyStrings != null) {
+            return Arrays.stream(replyStrings).collect(Collectors.joining());
+        }
+        return "";
+    }
 
     @Override
     public Observable<ProviderStatus> init(final long userId) {
@@ -103,14 +114,6 @@ public class FTProvider extends UbiProvider {
         } catch (final IOException e1) {
 
         }
-    }
-
-    private static String showServerReply(FTPClient ftpClient) {
-        final String[] replyStrings = ftpClient.getReplyStrings();
-        if (replyStrings != null) {
-            return Arrays.stream(replyStrings).collect(Collectors.joining());
-        }
-        return "";
     }
 
     @Override

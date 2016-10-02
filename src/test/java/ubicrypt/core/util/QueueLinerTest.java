@@ -18,9 +18,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
-import rx.Observable;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -29,6 +26,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import rx.Observable;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 import static java.lang.Thread.sleep;
 import static java.util.stream.IntStream.range;

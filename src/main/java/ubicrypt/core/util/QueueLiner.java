@@ -14,11 +14,6 @@
 package ubicrypt.core.util;
 
 import org.slf4j.Logger;
-import reactor.fn.tuple.Tuple;
-import reactor.fn.tuple.Tuple2;
-import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Func1;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -27,13 +22,17 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 
+import reactor.fn.tuple.Tuple;
+import reactor.fn.tuple.Tuple2;
+import rx.Observable;
+import rx.Subscriber;
+import rx.functions.Func1;
+
 import static org.slf4j.LoggerFactory.getLogger;
 import static rx.functions.Actions.empty;
 
 /**
  * Runs sequentially any Observable and terminate any job with the given conclusive epiloguer.
- *
- * @param <T>
  */
 public class QueueLiner<T> {
     private final Logger log = getLogger(QueueLiner.class);
@@ -51,9 +50,6 @@ public class QueueLiner<T> {
 
     /**
      * Creates an Enqueuer for a specific epilogue.
-     *
-     * @param epilogue
-     * @return
      */
     public QueueEpilogued createEpiloguer(final Supplier<Observable<T>> epilogue) {
         final QueueEpilogued qe = new QueueEpilogued(epilogue);
@@ -78,9 +74,6 @@ public class QueueLiner<T> {
 
     /**
      * Spools the pending queue for a specific QueueEpilogued.
-     *
-     * @param instance
-     * @param lastSubscriber
      */
     private void spool(final QueueEpilogued instance, final Subscriber<? super T> lastSubscriber) {
         final Tuple2<Observable<T>, Subscriber<? super T>> enqued = instance.queue.poll();
@@ -125,9 +118,6 @@ public class QueueLiner<T> {
 
         /**
          * Enqueue the Observable and runs it sequentially (not in parallel)
-         *
-         * @param enqueable
-         * @return
          */
         @Override
         public Observable<T> call(final Observable<T> enqueable) {

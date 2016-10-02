@@ -14,8 +14,8 @@
 package ubicrypt.core.util;
 
 import com.google.common.base.Throwables;
+
 import org.slf4j.Logger;
-import rx.functions.Func1;
 
 import java.io.IOException;
 import java.nio.channels.FileChannel;
@@ -25,6 +25,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
+
+import rx.functions.Func1;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

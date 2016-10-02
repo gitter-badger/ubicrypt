@@ -14,15 +14,17 @@
 package ubicrypt.core.provider;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import java.io.InputStream;
+import java.util.UUID;
+
 import rx.Observable;
 import ubicrypt.core.dto.Key;
 import ubicrypt.core.dto.RemoteFile;
 import ubicrypt.core.dto.UbiFile;
-
-import java.io.InputStream;
-import java.util.UUID;
 
 public abstract class UbiProvider {
     private transient long userId = -1;

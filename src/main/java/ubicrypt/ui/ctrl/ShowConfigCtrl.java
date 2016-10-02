@@ -15,19 +15,22 @@ package ubicrypt.ui.ctrl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+
+import org.slf4j.Logger;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javax.inject.Inject;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
-import org.slf4j.Logger;
 import ubicrypt.core.Utils;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.ui.Anchor;
 import ubicrypt.ui.OnShow;
-
-import javax.inject.Inject;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

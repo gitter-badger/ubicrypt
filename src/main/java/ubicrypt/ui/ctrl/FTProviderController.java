@@ -13,6 +13,17 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.apache.commons.lang3.math.NumberUtils;
+import org.slf4j.Logger;
+
+import java.net.InetAddress;
+import java.net.URL;
+import java.net.UnknownHostException;
+import java.util.ResourceBundle;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,19 +34,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.slf4j.Logger;
 import rx.schedulers.Schedulers;
 import ubicrypt.core.provider.ProviderCommander;
 import ubicrypt.core.provider.ftp.FTPConf;
 import ubicrypt.core.provider.ftp.FTProvider;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.net.InetAddress;
-import java.net.URL;
-import java.net.UnknownHostException;
-import java.util.ResourceBundle;
 
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.slf4j.LoggerFactory.getLogger;

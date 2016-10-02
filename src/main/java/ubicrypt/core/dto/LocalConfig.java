@@ -14,14 +14,16 @@
 package ubicrypt.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import ubicrypt.core.provider.UbiProvider;
-import ubicrypt.core.util.PGPKValue;
 
 import java.nio.file.Path;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import ubicrypt.core.provider.UbiProvider;
+import ubicrypt.core.util.PGPKValue;
 
 import static ubicrypt.core.Utils.copySynchronized;
 

@@ -15,6 +15,7 @@ package ubicrypt.core.provider;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
 import ubicrypt.core.dto.UbiFile;
 
 public class FileEvent {

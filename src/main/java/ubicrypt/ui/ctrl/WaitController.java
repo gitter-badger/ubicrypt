@@ -13,10 +13,10 @@
  */
 package ubicrypt.ui.ctrl;
 
+import java.util.function.Consumer;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-
-import java.util.function.Consumer;
 
 public class WaitController implements Consumer<String> {
     @FXML

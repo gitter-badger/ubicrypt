@@ -17,15 +17,16 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rx.Observable;
-import ubicrypt.core.Utils;
-import ubicrypt.core.provider.ProviderStatus;
-import ubicrypt.core.provider.UbiProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.UUID;
+
+import rx.Observable;
+import ubicrypt.core.Utils;
+import ubicrypt.core.provider.ProviderStatus;
+import ubicrypt.core.provider.UbiProvider;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

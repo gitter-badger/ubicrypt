@@ -13,12 +13,12 @@
  */
 package ubicrypt.core.provider;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
 import rx.Observable;
 import ubicrypt.core.FileProvenience;
 import ubicrypt.core.dto.UbiFile;
-
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 
 public interface IRepository {
 

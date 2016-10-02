@@ -14,6 +14,7 @@
 package ubicrypt.core.util;
 
 import com.google.common.base.Throwables;
+
 import rx.functions.Action1;
 
 public interface ConsumerExp<T> {

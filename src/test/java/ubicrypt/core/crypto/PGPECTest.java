@@ -16,9 +16,15 @@ package ubicrypt.core.crypto;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.api.Assertions;
-import org.bouncycastle.openpgp.*;
+import org.bouncycastle.openpgp.PGPException;
+import org.bouncycastle.openpgp.PGPKeyPair;
+import org.bouncycastle.openpgp.PGPKeyRingGenerator;
+import org.bouncycastle.openpgp.PGPPrivateKey;
+import org.bouncycastle.openpgp.PGPPublicKey;
+import org.bouncycastle.openpgp.PGPPublicKeyRing;
+import org.bouncycastle.openpgp.PGPSecretKeyRing;
+import org.bouncycastle.openpgp.PGPSignature;
 import org.junit.Test;
-import ubicrypt.core.Utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -26,9 +32,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import ubicrypt.core.Utils;
+
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
-import static ubicrypt.core.crypto.PGPEC.*;
+import static ubicrypt.core.crypto.PGPEC.decrypt;
+import static ubicrypt.core.crypto.PGPEC.encrypt;
+import static ubicrypt.core.crypto.PGPEC.encryptionKey;
 
 public class PGPECTest {
     @Test

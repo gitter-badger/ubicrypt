@@ -13,9 +13,19 @@
  */
 package ubicrypt.ui.tree;
 
-import javafx.collections.ListChangeListener;
-import javafx.scene.control.*;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import javafx.collections.ListChangeListener;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TreeCell;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Actions;
@@ -24,10 +34,6 @@ import ubicrypt.core.events.SyncBeginEvent;
 import ubicrypt.core.events.SynchDoneEvent;
 import ubicrypt.core.util.ClassMatcher;
 import ubicrypt.ui.ctrl.GeneralProgress;
-
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static javafx.application.Platform.runLater;
 import static org.slf4j.LoggerFactory.getLogger;

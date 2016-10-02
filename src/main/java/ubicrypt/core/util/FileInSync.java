@@ -13,6 +13,10 @@
  */
 package ubicrypt.core.util;
 
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.functions.Func1;
 import ubicrypt.core.dto.RemoteConfig;
@@ -20,9 +24,6 @@ import ubicrypt.core.dto.UbiFile;
 import ubicrypt.core.dto.VClock;
 import ubicrypt.core.provider.ProviderHook;
 import ubicrypt.core.provider.ProviderLifeCycle;
-
-import javax.inject.Inject;
-import java.util.stream.Collectors;
 
 public class FileInSync implements Func1<UbiFile, Observable.OnSubscribe<Boolean>> {
 

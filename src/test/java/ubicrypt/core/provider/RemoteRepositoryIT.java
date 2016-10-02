@@ -19,6 +19,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
+
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
 import rx.Observable;
 import rx.internal.operators.BufferUntilSubscriber;
 import rx.subjects.PublishSubject;
@@ -28,19 +35,18 @@ import ubicrypt.core.TestUtils;
 import ubicrypt.core.Utils;
 import ubicrypt.core.crypto.PGPEC;
 import ubicrypt.core.crypto.PGPService;
-import ubicrypt.core.dto.*;
+import ubicrypt.core.dto.Key;
+import ubicrypt.core.dto.LocalConfig;
+import ubicrypt.core.dto.LocalFile;
+import ubicrypt.core.dto.RemoteConfig;
+import ubicrypt.core.dto.UbiFile;
+import ubicrypt.core.dto.VClock;
 import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.provider.file.FileProvider;
 import ubicrypt.core.provider.lock.AcquirerReleaser;
 import ubicrypt.core.provider.lock.ObjectIO;
 import ubicrypt.core.util.ObjectSerializer;
 import ubicrypt.core.util.QueueLiner;
-
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.slf4j.LoggerFactory.getLogger;

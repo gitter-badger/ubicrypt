@@ -17,15 +17,16 @@ import org.apache.commons.io.IOUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import ubicrypt.core.TestUtils;
-import ubicrypt.core.crypto.IPGPService;
-import ubicrypt.core.dto.RemoteConfig;
-import ubicrypt.core.util.ObjectSerializer;
 
 import java.io.ByteArrayInputStream;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
+
+import ubicrypt.core.TestUtils;
+import ubicrypt.core.crypto.IPGPService;
+import ubicrypt.core.dto.RemoteConfig;
+import ubicrypt.core.util.ObjectSerializer;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

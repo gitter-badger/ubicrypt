@@ -13,20 +13,22 @@
  */
 package ubicrypt.ui.ctrl;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import org.slf4j.Logger;
-import ubicrypt.core.provider.ProviderDescriptor;
-import ubicrypt.ui.Anchor;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.inject.Inject;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import ubicrypt.core.provider.ProviderDescriptor;
+import ubicrypt.ui.Anchor;
 
 import static java.lang.String.format;
 import static org.slf4j.LoggerFactory.getLogger;

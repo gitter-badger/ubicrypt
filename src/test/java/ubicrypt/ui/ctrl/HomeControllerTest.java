@@ -14,16 +14,18 @@
 package ubicrypt.ui.ctrl;
 
 import com.sun.javafx.application.PlatformImpl;
-import javafx.scene.control.TreeItem;
+
 import org.junit.Test;
+
+import java.nio.file.Paths;
+import java.util.Optional;
+
+import javafx.scene.control.TreeItem;
 import ubicrypt.core.dto.LocalFile;
 import ubicrypt.ui.Anchor;
 import ubicrypt.ui.tree.FileItem;
 import ubicrypt.ui.tree.FolderItem;
 import ubicrypt.ui.tree.ITreeItem;
-
-import java.nio.file.Paths;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static ubicrypt.core.Utils.emptySubject;

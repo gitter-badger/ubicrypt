@@ -4,23 +4,24 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<fx:root text="Providers" type="Tab" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-	<TabPane prefWidth="100.0" tabClosingPolicy="UNAVAILABLE">
-		<tabs>
-			<Tab text="Active">
-				<content>
-					<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-						<ListView fx:id="activeProviders" prefWidth="Infinity" />
-					</AnchorPane>
-				</content>
-			</Tab>
-			<Tab text="Available">
-				<content>
-					<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-						<ListView fx:id="availableProviders" prefWidth="Infinity" />
-					</AnchorPane>
-				</content>
-			</Tab>
-		</tabs>
-	</TabPane>
+<fx:root xmlns:fx="http://javafx.com/fxml/1" text="Providers" type="Tab"
+         xmlns="http://javafx.com/javafx/8">
+    <TabPane prefWidth="100.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab text="Active">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <ListView fx:id="activeProviders" prefWidth="Infinity"/>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Available">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <ListView fx:id="availableProviders" prefWidth="Infinity"/>
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
 </fx:root>

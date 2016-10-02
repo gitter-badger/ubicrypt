@@ -13,6 +13,10 @@
  */
 package ubicrypt.ui.tree;
 
+import org.slf4j.Logger;
+
+import java.util.Optional;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -21,9 +25,6 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import org.slf4j.Logger;
-
-import java.util.Optional;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

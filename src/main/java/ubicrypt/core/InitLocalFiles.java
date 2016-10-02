@@ -15,17 +15,19 @@ package ubicrypt.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ubicrypt.core.dto.LocalConfig;
-import ubicrypt.core.dto.LocalFile;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.function.Consumer;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
+import ubicrypt.core.dto.LocalConfig;
+import ubicrypt.core.dto.LocalFile;
 
 /**
  * increment vclock for each local file has been modified before startup.

@@ -13,24 +13,26 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.slf4j.Logger;
+
+import java.io.File;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.ResourceBundle;
+
+import javax.inject.Inject;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
-import org.slf4j.Logger;
 import ubicrypt.core.provider.ProviderCommander;
 import ubicrypt.core.provider.file.FileConf;
 import ubicrypt.core.provider.file.FileProvider;
 import ubicrypt.ui.Anchor;
 import ubicrypt.ui.OnShow;
-
-import javax.inject.Inject;
-import java.io.File;
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.ResourceBundle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

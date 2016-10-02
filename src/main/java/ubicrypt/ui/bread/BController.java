@@ -13,19 +13,20 @@
  */
 package ubicrypt.ui.bread;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TreeItem;
 import org.controlsfx.control.BreadCrumbBar;
 import org.slf4j.Logger;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
-import ubicrypt.ui.OnShow;
 
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TreeItem;
+import ubicrypt.ui.OnShow;
 
 import static org.slf4j.LoggerFactory.getLogger;
 import static ubicrypt.ui.Anchor.anchor;

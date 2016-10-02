@@ -14,9 +14,10 @@
 package ubicrypt.core.util;
 
 import com.google.common.base.Throwables;
-import rx.functions.Func1;
 
 import java.util.function.Function;
+
+import rx.functions.Func1;
 
 public interface FunctionExp<T, R> {
     static <T, R> Function<T, R> silent(final FunctionExp<T, R> wrap) {

@@ -16,6 +16,7 @@ package ubicrypt.core.crypto;
 import org.junit.After;
 import org.junit.Before;
 import org.slf4j.Logger;
+
 import ubicrypt.core.TestUtils;
 
 import static org.slf4j.LoggerFactory.getLogger;

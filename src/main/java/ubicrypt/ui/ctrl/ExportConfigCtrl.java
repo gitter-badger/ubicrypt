@@ -13,30 +13,32 @@
  */
 package ubicrypt.ui.ctrl;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
 import org.apache.commons.io.IOUtils;
 import org.bouncycastle.bcpg.ArmoredOutputStream;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javax.inject.Inject;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import ubicrypt.core.Utils;
 import ubicrypt.core.crypto.PGPService;
 import ubicrypt.core.dto.ExportConfig;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.ui.Anchor;
 import ubicrypt.ui.OnShow;
-
-import javax.inject.Inject;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

@@ -14,6 +14,10 @@
 package ubicrypt.core.provider.lock;
 
 import org.slf4j.Logger;
+
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicLong;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.subjects.PublishSubject;
@@ -23,12 +27,14 @@ import ubicrypt.core.dto.RemoteConfig;
 import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.provider.ProviderStatus;
 
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicLong;
-
 import static org.slf4j.LoggerFactory.getLogger;
 import static rx.Observable.just;
-import static ubicrypt.core.provider.ProviderStatus.*;
+import static ubicrypt.core.provider.ProviderStatus.active;
+import static ubicrypt.core.provider.ProviderStatus.error;
+import static ubicrypt.core.provider.ProviderStatus.expired;
+import static ubicrypt.core.provider.ProviderStatus.initialized;
+import static ubicrypt.core.provider.ProviderStatus.unavailable;
+import static ubicrypt.core.provider.ProviderStatus.unitialized;
 
 
 public class ConfigAcquirer implements Observable.OnSubscribe<AcquirerReleaser> {

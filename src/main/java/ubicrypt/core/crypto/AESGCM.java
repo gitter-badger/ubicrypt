@@ -14,6 +14,7 @@
 package ubicrypt.core.crypto;
 
 import com.google.common.base.Throwables;
+
 import org.bouncycastle.crypto.engines.AESEngine;
 import org.bouncycastle.crypto.io.CipherInputStream;
 import org.bouncycastle.crypto.modes.AEADBlockCipher;
@@ -22,7 +23,6 @@ import org.bouncycastle.crypto.params.AEADParameters;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
@@ -30,6 +30,8 @@ import java.nio.ByteBuffer;
 import java.security.SecureRandom;
 import java.security.Security;
 import java.util.concurrent.atomic.AtomicLong;
+
+import javax.crypto.spec.SecretKeySpec;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

@@ -17,6 +17,12 @@ import org.bouncycastle.openpgp.PGPPublicKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.util.stream.Collectors;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.functions.Actions;
 import rx.internal.operators.BufferUntilSubscriber;
@@ -25,10 +31,6 @@ import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.exp.AlreadyManagedException;
 import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.util.PGPKValue;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.util.stream.Collectors;
 
 import static rx.Observable.error;
 

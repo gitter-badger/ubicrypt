@@ -14,12 +14,8 @@
 package ubicrypt.core;
 
 import com.google.common.base.Throwables;
+
 import org.apache.commons.lang3.RandomStringUtils;
-import ubicrypt.core.crypto.AESGCM;
-import ubicrypt.core.dto.Key;
-import ubicrypt.core.dto.RemoteFile;
-import ubicrypt.core.provider.file.FileConf;
-import ubicrypt.core.provider.file.FileProvider;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -27,6 +23,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.ThreadLocalRandom;
+
+import ubicrypt.core.crypto.AESGCM;
+import ubicrypt.core.dto.Key;
+import ubicrypt.core.dto.RemoteFile;
+import ubicrypt.core.provider.file.FileConf;
+import ubicrypt.core.provider.file.FileProvider;
 
 public class TestUtils {
     public static final Path tmp = Paths.get(System.getProperty("java.io.tmpdir")).resolve("ubiq");
@@ -81,8 +83,9 @@ public class TestUtils {
     /**
      * Returns a free port number on localhost.
      *
-     * Heavily inspired from org.eclipse.jdt.launching.SocketUtil (to avoid a dependency to JDT just because of this).
-     * Slightly improved with close() missing in JDT. And throws exception instead of returning -1.
+     * Heavily inspired from org.eclipse.jdt.launching.SocketUtil (to avoid a dependency to JDT just
+     * because of this). Slightly improved with close() missing in JDT. And throws exception instead
+     * of returning -1.
      *
      * @return a free port number on localhost
      * @throws IllegalStateException if unable to find a free port

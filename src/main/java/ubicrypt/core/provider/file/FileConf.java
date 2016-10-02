@@ -13,9 +13,9 @@
  */
 package ubicrypt.core.provider.file;
 
-import ubicrypt.core.dto.ProviderConf;
-
 import java.nio.file.Path;
+
+import ubicrypt.core.dto.ProviderConf;
 
 public class FileConf extends ProviderConf {
     private Path path;

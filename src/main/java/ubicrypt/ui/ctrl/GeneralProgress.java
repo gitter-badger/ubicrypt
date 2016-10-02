@@ -13,12 +13,12 @@
  */
 package ubicrypt.ui.ctrl;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
-
-import java.util.EmptyStackException;
-import java.util.Stack;
 
 public class GeneralProgress {
     private final ProgressIndicator inProgress;

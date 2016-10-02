@@ -16,10 +16,11 @@ package ubicrypt.core.watch;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-import ubicrypt.core.TestUtils;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import ubicrypt.core.TestUtils;
 
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.doNothing;

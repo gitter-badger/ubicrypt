@@ -14,9 +14,16 @@
 package ubicrypt.core.provider.lock;
 
 import com.google.common.collect.ImmutableSet;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.subjects.PublishSubject;
@@ -24,11 +31,6 @@ import ubicrypt.core.RemoteIO;
 import ubicrypt.core.dto.RemoteConfig;
 import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.provider.UbiProvider;
-
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;

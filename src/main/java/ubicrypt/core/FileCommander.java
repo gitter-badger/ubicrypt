@@ -15,6 +15,18 @@ package ubicrypt.core;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
 import reactor.fn.tuple.Tuple;
 import reactor.fn.tuple.Tuple2;
 import rx.Observable;
@@ -25,16 +37,6 @@ import ubicrypt.core.dto.VClock;
 import ubicrypt.core.exp.AlreadyManagedException;
 import ubicrypt.core.provider.LocalRepository;
 import ubicrypt.core.provider.ProviderLifeCycle;
-
-import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.lang.String.format;

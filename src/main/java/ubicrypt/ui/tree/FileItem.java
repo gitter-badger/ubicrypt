@@ -16,12 +16,13 @@ package ubicrypt.ui.tree;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.slf4j.Logger;
-import rx.Observable;
-import rx.functions.Func1;
-import ubicrypt.core.dto.UbiFile;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+
+import rx.Observable;
+import rx.functions.Func1;
+import ubicrypt.core.dto.UbiFile;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

@@ -13,24 +13,26 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.bouncycastle.openpgp.PGPPublicKey;
+import org.slf4j.Logger;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.function.Consumer;
+
+import javax.inject.Inject;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.bouncycastle.openpgp.PGPPublicKey;
-import org.slf4j.Logger;
 import ubicrypt.core.Utils;
 import ubicrypt.core.crypto.PGPEC;
 import ubicrypt.core.crypto.PGPService;
 import ubicrypt.core.provider.ProviderCommander;
-
-import javax.inject.Inject;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.function.Consumer;
 
 import static org.slf4j.LoggerFactory.getLogger;
 import static ubicrypt.ui.Anchor.anchor;

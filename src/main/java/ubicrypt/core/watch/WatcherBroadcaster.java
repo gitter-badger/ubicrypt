@@ -14,29 +14,44 @@
 package ubicrypt.core.watch;
 
 import com.google.common.base.Throwables;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.WatchEvent;
+import java.nio.file.WatchKey;
+import java.nio.file.WatchService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Consumer;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
 import ubicrypt.core.Utils;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.dto.LocalFile;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Consumer;
-
-import static java.nio.file.StandardWatchEventKinds.*;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_DELETE;
+import static java.nio.file.StandardWatchEventKinds.ENTRY_MODIFY;
 
 public class WatcherBroadcaster {
     private final static Logger log = LoggerFactory.getLogger(WatcherBroadcaster.class);

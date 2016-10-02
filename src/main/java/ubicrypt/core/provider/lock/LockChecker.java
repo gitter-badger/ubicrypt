@@ -15,21 +15,26 @@ package ubicrypt.core.provider.lock;
 
 import org.apache.commons.lang3.RandomUtils;
 import org.slf4j.Logger;
+
+import java.time.Instant;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Actions;
 import ubicrypt.core.dto.ProviderLock;
 import ubicrypt.core.exp.NotFoundException;
 
-import java.time.Instant;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Function;
-
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.slf4j.LoggerFactory.getLogger;
-import static rx.Observable.*;
-import static ubicrypt.core.provider.lock.LockStatus.*;
+import static rx.Observable.empty;
+import static rx.Observable.error;
+import static rx.Observable.timer;
+import static ubicrypt.core.provider.lock.LockStatus.available;
+import static ubicrypt.core.provider.lock.LockStatus.expired;
+import static ubicrypt.core.provider.lock.LockStatus.unavailable;
 
 public class LockChecker implements Observable.OnSubscribe<LockStatus> {
     private static final Logger log = getLogger(LockChecker.class);

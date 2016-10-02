@@ -14,6 +14,7 @@
 package ubicrypt.core.provider;
 
 import com.google.common.base.Throwables;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -21,6 +22,20 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Stream;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.subjects.Subject;
 import ubicrypt.core.FileProvenience;
@@ -33,18 +48,6 @@ import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.util.CopyFile;
 import ubicrypt.core.util.StoreTempFile;
 import ubicrypt.core.util.SupplierExp;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

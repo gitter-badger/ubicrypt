@@ -13,13 +13,23 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.bouncycastle.bcpg.ArmoredInputStream;
+import org.slf4j.Logger;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import org.bouncycastle.bcpg.ArmoredInputStream;
-import org.slf4j.Logger;
 import rx.Observable;
 import rx.functions.Actions;
 import ubicrypt.core.Utils;
@@ -29,14 +39,6 @@ import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.provider.ProviderCommander;
 import ubicrypt.core.util.PGPKValue;
 import ubicrypt.ui.Anchor;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.stream.Collectors;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

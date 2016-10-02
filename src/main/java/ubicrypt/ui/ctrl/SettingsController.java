@@ -14,6 +14,23 @@
 package ubicrypt.ui.ctrl;
 
 import com.google.common.base.Throwables;
+
+import org.bouncycastle.bcpg.ArmoredOutputStream;
+import org.bouncycastle.openpgp.PGPKeyPair;
+import org.bouncycastle.openpgp.PGPPrivateKey;
+import org.controlsfx.control.NotificationPane;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -22,22 +39,8 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
-import org.bouncycastle.bcpg.ArmoredOutputStream;
-import org.bouncycastle.openpgp.PGPKeyPair;
-import org.bouncycastle.openpgp.PGPPrivateKey;
-import org.controlsfx.control.NotificationPane;
-import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import ubicrypt.core.crypto.PGPEC;
 import ubicrypt.ui.Anchor;
-
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

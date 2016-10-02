@@ -13,12 +13,12 @@
  */
 package ubicrypt.ui.tree;
 
+import java.util.Optional;
+
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.input.MouseEvent;
-
-import java.util.Optional;
 
 public interface ITreeItem {
     Node getGraphics();

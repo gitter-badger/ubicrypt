@@ -14,12 +14,14 @@
 package ubicrypt.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import org.bouncycastle.openpgp.PGPPublicKey;
-import ubicrypt.core.provider.UbiProvider;
-import ubicrypt.core.util.PGPKValue;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import ubicrypt.core.provider.UbiProvider;
+import ubicrypt.core.util.PGPKValue;
 
 import static ubicrypt.core.Utils.copySynchronized;
 

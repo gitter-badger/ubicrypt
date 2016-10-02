@@ -20,12 +20,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
-import ubicrypt.core.FTPTestServer;
-import ubicrypt.core.TestUtils;
-import ubicrypt.core.provider.ProviderStatus;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+
+import ubicrypt.core.FTPTestServer;
+import ubicrypt.core.TestUtils;
+import ubicrypt.core.provider.ProviderStatus;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

@@ -13,12 +13,12 @@
  */
 package ubicrypt.core;
 
-import rx.Observable;
-import rx.internal.operators.BufferUntilSubscriber;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.atomic.AtomicLong;
+
+import rx.Observable;
+import rx.internal.operators.BufferUntilSubscriber;
 
 public class MonitorInputStream extends InputStream {
     private final InputStream inputStream;

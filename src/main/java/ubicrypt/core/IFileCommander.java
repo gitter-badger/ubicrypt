@@ -13,11 +13,11 @@
  */
 package ubicrypt.core;
 
+import java.nio.file.Path;
+
 import reactor.fn.tuple.Tuple2;
 import rx.Observable;
 import ubicrypt.core.dto.LocalFile;
-
-import java.nio.file.Path;
 
 public interface IFileCommander {
     Observable<Tuple2<LocalFile, Observable<Boolean>>> addFile(Path absolutePath);

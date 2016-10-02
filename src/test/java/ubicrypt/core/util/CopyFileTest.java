@@ -16,13 +16,14 @@ package ubicrypt.core.util;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import rx.Observable;
-import ubicrypt.core.TestUtils;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
 import java.util.UUID;
+
+import rx.Observable;
+import ubicrypt.core.TestUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

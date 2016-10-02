@@ -20,19 +20,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
-import rx.Observable;
-import rx.Subscriber;
-import ubicrypt.core.crypto.IPGPService;
-import ubicrypt.core.dto.LocalConfig;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.nio.file.Files;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+
+import rx.Observable;
+import rx.Subscriber;
+import ubicrypt.core.crypto.IPGPService;
+import ubicrypt.core.dto.LocalConfig;
 
 public class InitLocalConfPersistor implements Observable.OnSubscribe<Void>, EnvironmentAware {
     private final Logger log = LoggerFactory.getLogger(InitLocalConfPersistor.class);

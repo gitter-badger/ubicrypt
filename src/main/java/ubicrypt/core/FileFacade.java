@@ -14,16 +14,18 @@
 package ubicrypt.core;
 
 import org.slf4j.Logger;
+
+import java.nio.file.Path;
+import java.util.Optional;
+
+import javax.inject.Inject;
+
 import reactor.fn.tuple.Tuple;
 import reactor.fn.tuple.Tuple2;
 import rx.Observable;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.dto.LocalFile;
 import ubicrypt.core.watch.WatcherBroadcaster;
-
-import javax.inject.Inject;
-import java.nio.file.Path;
-import java.util.Optional;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

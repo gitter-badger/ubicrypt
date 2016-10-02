@@ -15,18 +15,20 @@ package ubicrypt.core;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+
 import org.junit.Ignore;
 import org.junit.Test;
-import ubicrypt.core.dto.LocalConfig;
-import ubicrypt.core.dto.LocalFile;
-import ubicrypt.core.dto.RemoteFile;
-import ubicrypt.core.provider.IRepository;
-import ubicrypt.core.provider.LocalRepository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import ubicrypt.core.dto.LocalConfig;
+import ubicrypt.core.dto.LocalFile;
+import ubicrypt.core.dto.RemoteFile;
+import ubicrypt.core.provider.IRepository;
+import ubicrypt.core.provider.LocalRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;

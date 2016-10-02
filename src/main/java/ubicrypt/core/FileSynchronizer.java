@@ -15,9 +15,25 @@ package ubicrypt.core;
 
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import reactor.fn.tuple.Tuple;
 import reactor.fn.tuple.Tuple2;
 import rx.Observable;
@@ -29,14 +45,11 @@ import ubicrypt.core.dto.RemoteConfig;
 import ubicrypt.core.dto.VClock;
 import ubicrypt.core.events.SyncBeginEvent;
 import ubicrypt.core.events.SynchDoneEvent;
-import ubicrypt.core.provider.*;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import ubicrypt.core.provider.IRepository;
+import ubicrypt.core.provider.LocalRepository;
+import ubicrypt.core.provider.ProviderEvent;
+import ubicrypt.core.provider.ProviderHook;
+import ubicrypt.core.provider.ProviderLifeCycle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -61,9 +74,6 @@ public class FileSynchronizer implements Observable.OnSubscribe<Boolean> {
 
     /**
      * return only files which are not in conflict
-     *
-     * @param all
-     * @return
      */
     static Multimap<UUID, FileProvenience> withoutConflicts(final Multimap<UUID, FileProvenience> all) {
         return all.asMap().entrySet().stream()
@@ -94,9 +104,6 @@ public class FileSynchronizer implements Observable.OnSubscribe<Boolean> {
 
     /**
      * return only files which are in conflict
-     *
-     * @param all
-     * @return
      */
     static Multimap<UUID, FileProvenience> conflicts(final Multimap<UUID, FileProvenience> all) {
         return all.asMap().entrySet().stream()

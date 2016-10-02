@@ -14,10 +14,11 @@
 package ubicrypt.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import ubicrypt.core.provider.UbiProvider;
 
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import ubicrypt.core.provider.UbiProvider;
 
 import static ubicrypt.core.Utils.copySynchronized;
 

@@ -14,17 +14,20 @@
 package ubicrypt.core.crypto;
 
 import com.google.common.base.Throwables;
+
 import org.bouncycastle.openpgp.PGPException;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import ubicrypt.core.dto.LocalConfig;
-import ubicrypt.core.util.EqualsValue;
 
-import javax.inject.Inject;
 import java.io.InputStream;
 import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
+import ubicrypt.core.dto.LocalConfig;
+import ubicrypt.core.util.EqualsValue;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.util.stream.Stream.concat;

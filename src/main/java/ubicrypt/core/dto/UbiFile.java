@@ -13,19 +13,23 @@
  */
 package ubicrypt.core.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Throwables;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import ubicrypt.core.exp.ConflictException;
 
-import javax.validation.constraints.NotNull;
 import java.nio.file.Path;
 import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
+
+import javax.validation.constraints.NotNull;
+
+import ubicrypt.core.exp.ConflictException;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

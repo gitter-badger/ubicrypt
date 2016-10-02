@@ -19,6 +19,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.Subscription;
 import rx.functions.Actions;
@@ -34,17 +45,10 @@ import ubicrypt.core.provider.lock.LockChecker;
 import ubicrypt.core.provider.lock.ObjectIO;
 import ubicrypt.core.util.ObjectSerializer;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
-
 import static org.slf4j.LoggerFactory.getLogger;
-import static rx.Observable.*;
+import static rx.Observable.create;
+import static rx.Observable.error;
+import static rx.Observable.just;
 import static ubicrypt.core.Utils.springIt;
 
 public class ProviderLifeCycle implements ApplicationContextAware {

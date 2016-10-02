@@ -14,21 +14,23 @@
 package ubicrypt.ui.ctrl;
 
 import com.google.common.base.Throwables;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.bcpg.ArmoredInputStream;
 import org.bouncycastle.openpgp.PGPPublicKey;
 import org.slf4j.Logger;
-import ubicrypt.core.crypto.PGPEC;
-import ubicrypt.ui.OnShow;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import ubicrypt.core.crypto.PGPEC;
+import ubicrypt.ui.OnShow;
 
 import static org.slf4j.LoggerFactory.getLogger;
 import static ubicrypt.ui.Anchor.anchor;

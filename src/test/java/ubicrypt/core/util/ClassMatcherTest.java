@@ -14,9 +14,10 @@
 package ubicrypt.core.util;
 
 import org.junit.Test;
-import rx.functions.Action1;
 
 import java.util.concurrent.atomic.AtomicInteger;
+
+import rx.functions.Action1;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

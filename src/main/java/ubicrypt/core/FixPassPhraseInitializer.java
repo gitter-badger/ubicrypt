@@ -14,6 +14,7 @@
 package ubicrypt.core;
 
 import com.google.common.base.Throwables;
+
 import org.bouncycastle.openpgp.PGPException;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.bouncycastle.openpgp.PGPPrivateKey;
@@ -22,10 +23,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
-import reactor.fn.tuple.Tuple;
-import reactor.fn.tuple.Tuple2;
-import ubicrypt.core.crypto.PGPEC;
-import ubicrypt.core.dto.LocalConfig;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -33,7 +30,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 
-import static ubicrypt.core.Utils.*;
+import reactor.fn.tuple.Tuple;
+import reactor.fn.tuple.Tuple2;
+import ubicrypt.core.crypto.PGPEC;
+import ubicrypt.core.dto.LocalConfig;
+
+import static ubicrypt.core.Utils.configFile;
+import static ubicrypt.core.Utils.marshall;
+import static ubicrypt.core.Utils.marshallIs;
+import static ubicrypt.core.Utils.securityFile;
+import static ubicrypt.core.Utils.write;
 import static ubicrypt.core.crypto.PGPEC.encrypt;
 
 public class FixPassPhraseInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {

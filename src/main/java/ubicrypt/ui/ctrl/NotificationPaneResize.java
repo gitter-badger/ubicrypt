@@ -13,6 +13,8 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.controlsfx.control.NotificationPane;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,7 +23,6 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import org.controlsfx.control.NotificationPane;
 
 public class NotificationPaneResize extends Application {
 

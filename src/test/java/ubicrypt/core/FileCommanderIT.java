@@ -15,6 +15,7 @@ package ubicrypt.core;
 
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.bouncycastle.openpgp.PGPKeyPair;
@@ -36,6 +37,17 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.Subscription;
 import rx.schedulers.Schedulers;
@@ -48,17 +60,13 @@ import ubicrypt.core.crypto.PGPService;
 import ubicrypt.core.dto.LocalConfig;
 import ubicrypt.core.dto.LocalFile;
 import ubicrypt.core.dto.UbiFile;
-import ubicrypt.core.provider.*;
+import ubicrypt.core.provider.FileEvent;
+import ubicrypt.core.provider.LocalRepository;
+import ubicrypt.core.provider.ProviderEvent;
+import ubicrypt.core.provider.ProviderHook;
+import ubicrypt.core.provider.ProviderLifeCycle;
+import ubicrypt.core.provider.ProviderStatus;
 import ubicrypt.core.util.QueueLiner;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

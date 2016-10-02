@@ -15,9 +15,10 @@ package ubicrypt.core.watch;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import rx.subjects.PublishSubject;
 
 import java.nio.file.Path;
+
+import rx.subjects.PublishSubject;
 
 @Configuration
 public class WatchConf {

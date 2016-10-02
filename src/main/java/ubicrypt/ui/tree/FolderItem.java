@@ -13,18 +13,19 @@
  */
 package ubicrypt.ui.tree;
 
-import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.nio.file.Path;
 import java.util.Optional;
 import java.util.function.Consumer;
+
+import javafx.event.EventHandler;
+import javafx.scene.Node;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import static com.google.common.base.Preconditions.checkArgument;
 

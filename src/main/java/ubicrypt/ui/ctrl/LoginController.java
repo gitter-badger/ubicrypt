@@ -13,6 +13,13 @@
  */
 package ubicrypt.ui.ctrl;
 
+import org.apache.commons.lang3.StringUtils;
+import org.bouncycastle.openpgp.PGPException;
+import org.slf4j.Logger;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,15 +28,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import org.apache.commons.lang3.StringUtils;
-import org.bouncycastle.openpgp.PGPException;
-import org.slf4j.Logger;
 import rx.subjects.PublishSubject;
 import ubicrypt.core.Utils;
 import ubicrypt.ui.Anchor;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 

@@ -17,17 +17,19 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
+
+import java.io.InputStream;
+import java.util.zip.Deflater;
+import java.util.zip.DeflaterInputStream;
+import java.util.zip.InflaterInputStream;
+
+import javax.inject.Inject;
+
 import rx.Observable;
 import ubicrypt.core.crypto.AESGCM;
 import ubicrypt.core.crypto.IPGPService;
 import ubicrypt.core.dto.RemoteFile;
 import ubicrypt.core.provider.UbiProvider;
-
-import javax.inject.Inject;
-import java.io.InputStream;
-import java.util.zip.Deflater;
-import java.util.zip.DeflaterInputStream;
-import java.util.zip.InflaterInputStream;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.util.zip.Deflater.BEST_COMPRESSION;

@@ -32,6 +32,15 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
+
+import java.io.ByteArrayInputStream;
+import java.nio.file.Paths;
+import java.util.concurrent.CountDownLatch;
+import java.util.zip.DeflaterInputStream;
+
+import javax.annotation.Resource;
+import javax.inject.Inject;
+
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
 import ubicrypt.core.crypto.AESGCM;
@@ -48,13 +57,6 @@ import ubicrypt.core.provider.ProviderHook;
 import ubicrypt.core.provider.RemoteCtxConf;
 import ubicrypt.core.provider.file.FileProvider;
 import ubicrypt.core.util.ObjectSerializer;
-
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import java.io.ByteArrayInputStream;
-import java.nio.file.Paths;
-import java.util.concurrent.CountDownLatch;
-import java.util.zip.DeflaterInputStream;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.assertj.core.api.Assertions.assertThat;

@@ -16,12 +16,13 @@ package ubicrypt.core.util;
 import org.apache.commons.io.IOUtils;
 import org.bouncycastle.openpgp.PGPKeyPair;
 import org.junit.Test;
-import ubicrypt.core.Utils;
-import ubicrypt.core.crypto.PGPEC;
 
 import java.io.InputStream;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import ubicrypt.core.Utils;
+import ubicrypt.core.crypto.PGPEC;
 
 import static org.apache.commons.io.IOUtils.toInputStream;
 import static org.assertj.core.api.Assertions.assertThat;

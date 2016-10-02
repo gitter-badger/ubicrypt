@@ -17,6 +17,14 @@ import org.apache.commons.io.IOUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.zip.DeflaterInputStream;
+
 import rx.Observable;
 import rx.Subscription;
 import rx.functions.Actions;
@@ -35,13 +43,6 @@ import ubicrypt.core.provider.file.FileProvider;
 import ubicrypt.core.provider.lock.AcquirerReleaser;
 import ubicrypt.core.provider.lock.ObjectIO;
 import ubicrypt.core.util.ObjectSerializer;
-
-import java.io.ByteArrayInputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-import java.util.zip.DeflaterInputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;

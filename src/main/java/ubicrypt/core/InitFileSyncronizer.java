@@ -16,14 +16,16 @@ package ubicrypt.core;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
 import rx.Observable;
 import rx.functions.Action0;
 import rx.functions.Actions;
 import ubicrypt.core.provider.ProviderEvent;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 import static ubicrypt.core.provider.ProviderStatus.active;
 import static ubicrypt.core.provider.ProviderStatus.added;

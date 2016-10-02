@@ -15,12 +15,13 @@ package ubicrypt.core.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
-import rx.Observable;
 
 import java.io.ByteArrayInputStream;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+
+import rx.Observable;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

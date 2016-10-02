@@ -15,9 +15,6 @@ package ubicrypt.core.provider.lock;
 
 import org.junit.Before;
 import org.junit.Test;
-import rx.Observable;
-import ubicrypt.core.dto.ProviderLock;
-import ubicrypt.core.exp.NotFoundException;
 
 import java.time.Instant;
 import java.util.concurrent.CountDownLatch;
@@ -27,8 +24,14 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 
+import rx.Observable;
+import ubicrypt.core.dto.ProviderLock;
+import ubicrypt.core.exp.NotFoundException;
+
 import static org.assertj.core.api.Assertions.assertThat;
-import static ubicrypt.core.provider.lock.LockStatus.*;
+import static ubicrypt.core.provider.lock.LockStatus.available;
+import static ubicrypt.core.provider.lock.LockStatus.expired;
+import static ubicrypt.core.provider.lock.LockStatus.unavailable;
 
 public class LockCheckerTest {
 
