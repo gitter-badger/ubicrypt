@@ -27,6 +27,7 @@ import ubicrypt.core.InitFileSyncronizer;
 import ubicrypt.core.InitLocalFiles;
 import ubicrypt.core.ProgressFile;
 import ubicrypt.core.dto.UbiFile;
+import ubicrypt.core.util.InProgressTracker;
 import ubicrypt.core.util.QueueLiner;
 
 @Configuration
@@ -36,6 +37,11 @@ public class RemoteCtxConf {
     @DependsOn("localFileInitSynchronizer")
     public ProviderLifeCycle providerLifeCycle() {
         return new ProviderLifeCycle();
+    }
+
+    @Bean
+    public InProgressTracker inProgressTracker() {
+        return new InProgressTracker();
     }
 
     @Bean

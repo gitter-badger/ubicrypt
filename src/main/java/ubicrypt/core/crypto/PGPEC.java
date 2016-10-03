@@ -330,7 +330,7 @@ public class PGPEC {
 
         try {
             final PGPEncryptedDataList encList = (PGPEncryptedDataList) pgpF.nextObject();
-            log.debug("decrypt with sk:{}", privateKey.getKeyID());
+            log.trace("decrypt with sk:{}", privateKey.getKeyID());
 
             final PGPPublicKeyEncryptedData encP = toStream((Iterator<PGPPublicKeyEncryptedData>) encList.iterator())
                     .filter((PGPPublicKeyEncryptedData ed) -> {

@@ -63,7 +63,6 @@ public class ConfigAcquirer implements Observable.OnSubscribe<AcquirerReleaser> 
             case expired:
                 Observable.create(lockChecker).subscribe(new LockSubscriber(subscriber));
             case initialized:
-                log.debug("wait for filter");
                 statuses.filter(event -> event == error || event == unavailable || event == active).flatMap(event -> {
                     if (event == error || event == unavailable) {
                         log.debug("return no configuration");

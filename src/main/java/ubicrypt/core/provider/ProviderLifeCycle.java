@@ -43,6 +43,7 @@ import ubicrypt.core.exp.NotFoundException;
 import ubicrypt.core.provider.lock.ConfigAcquirer;
 import ubicrypt.core.provider.lock.LockChecker;
 import ubicrypt.core.provider.lock.ObjectIO;
+import ubicrypt.core.util.InProgressTracker;
 import ubicrypt.core.util.ObjectSerializer;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -63,6 +64,8 @@ public class ProviderLifeCycle implements ApplicationContextAware {
     @Inject
     private int deviceId;
     private ConfigurableApplicationContext ctx;
+    @Inject
+    private InProgressTracker inProgressTracker;
 
     @PostConstruct
     public void init() {
@@ -79,6 +82,10 @@ public class ProviderLifeCycle implements ApplicationContextAware {
                     ObjectSerializer serializer = springIt(ctx, new ObjectSerializer(provider));
                     ObjectIO<ProviderLock> lockIO = new ObjectIO(serializer, provider.getLockFile(), ProviderLock.class);
                     LockChecker lockCheker = new LockChecker(deviceId, lockIO, lockIO, provider.getDurationLockMs(), provider.getDelayAcquiringLockMs());
+                    /**
+                     * renew lock when download/upload in progress
+                     */
+                    lockCheker.setShouldExtendLock(()-> inProgressTracker.inProgress());
                     ObjectIO<RemoteConfig> configIO = new ObjectIO<>(serializer, provider.getConfFile(), RemoteConfig.class);
                     ConfigAcquirer acquirer = new ConfigAcquirer(lockCheker, configIO);
                     acquirer.setProviderRef(provider.toString());

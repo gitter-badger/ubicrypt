@@ -66,6 +66,7 @@ import ubicrypt.core.provider.ProviderEvent;
 import ubicrypt.core.provider.ProviderHook;
 import ubicrypt.core.provider.ProviderLifeCycle;
 import ubicrypt.core.provider.ProviderStatus;
+import ubicrypt.core.util.InProgressTracker;
 import ubicrypt.core.util.QueueLiner;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -191,6 +192,11 @@ public class FileCommanderIT implements ApplicationContextAware {
         @Bean
         public ProviderLifeCycle providerLifeCycle() {
             return new ProviderLifeCycle();
+        }
+
+        @Bean
+        public InProgressTracker inProgressTracker() {
+            return new InProgressTracker();
         }
 
         @Bean
