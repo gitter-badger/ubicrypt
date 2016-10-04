@@ -1,5 +1,7 @@
 # UbiCrypt
 
+[![Join the chat at https://gitter.im/ubicryp/Lobby](https://badges.gitter.im/ubicryp/Lobby.svg)](https://gitter.im/ubicryp/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Keep your digital life in your control. Privately and easily
 
 _Cloud storage is pervasive and cheap, but it raises concerns on privacy, security, resiliantness and portability._
